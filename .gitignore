@@ -1,0 +1,4 @@
+*.map
+app/**/*.js
+node_modules
+firebaseProject.ts
