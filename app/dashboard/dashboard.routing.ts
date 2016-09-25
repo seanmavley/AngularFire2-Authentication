@@ -8,4 +8,4 @@ const appRoutes: Routes = [
   { path: 'dashboard', component: DashboardComponent, canActivate: [AuthGuard] },
 ];
 
-export const dashRouting: ModuleWithProviders = RouterModule.forRoot(appRoutes);
+export const dashRouting: ModuleWithProviders = RouterModule.forChild(appRoutes);

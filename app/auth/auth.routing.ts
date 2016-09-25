@@ -8,4 +8,4 @@ const appRoutes: Routes = [
   { path: 'signup', component: SignupComponent }
 ];
 
-export const authRouting: ModuleWithProviders = RouterModule.forRoot(appRoutes);
+export const authRouting: ModuleWithProviders = RouterModule.forChild(appRoutes);

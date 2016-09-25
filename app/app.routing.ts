@@ -10,7 +10,6 @@ import { AuthGuard } from './auth/auth-guard.service';
 import { PageNotFoundComponent } from './app.component';
 
 const appRoutes: Routes = [
-  { path: '', redirectTo: '/', pathMatch: 'full' },
   { path: '', component: HomeComponent },
   { path: '**', component: PageNotFoundComponent }
 ];

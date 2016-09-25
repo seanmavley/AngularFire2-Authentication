@@ -1,11 +1,11 @@
 <html>
   <head>
     <base href="/">
-    <title>AngularFire2 Authentication</title>
+    <title>AngularFire 2 Authentication</title>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <!-- Load CSS Stylesheets -->
-    <!-- <link rel="stylesheet" href="styles.css"> -->
+    <link rel="stylesheet" href="node_modules/foundation-sites/dist/foundation.min.css">
     <!-- 1. Load libraries -->
      <!-- Polyfill(s) for older browsers -->
     <script src="node_modules/core-js/client/shim.min.js"></script>
@@ -23,4 +23,9 @@
   <body>
     <root-app>Loading...</root-app>
   </body>
+  <script src="node_modules/jquery/dist/jquery.min.js"></script>
+  <script src="node_modules/foundation-sites/dist/foundation.min.js"></script>
+  <script type="text/javascript">
+    $(document).foundation();
+  </script>
 </html>
