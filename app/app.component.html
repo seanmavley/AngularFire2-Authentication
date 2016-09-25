@@ -1,17 +1,23 @@
-<nav>
-    <a routerLink="/">Home</a>
-    <span *ngIf="af.auth | async"> &bull;
-      <a routerLink="/dashboard" *ngIf="af.auth | async">Dashboard</a> &bull;
-      <a href="#" (click)="logout()">Logout</a>
-    </span>
-    <span *ngIf="!(af.auth | async)"> | 
-      <a routerLink="/login">Login</a> &bull;
-      <a routerLink="/signup">Sign up</a>
-    </span>
-</nav>
-<hr>
-<div *ngIf="af.auth | async">You are logged in.</div>
-<div *ngIf="!(af.auth | async)">You're not logged in.</div>
+<div class="row">
+    <div class="small-12 medium-10 medium-centered columns">
+        <div class="menu-centered">
+            <a routerLink="/" class="button hollow">AngularFire2 <small>beta</small></a>
+            <span *ngIf="af.auth | async">
+              <a routerLink="/dashboard" class="button">Dashboard</a>
+              <a (click)="logout()" class="button small" title="Logout"><i class="step fi-power size-18"></i></a>
+            </span>
+            <span *ngIf="!(af.auth | async)">
+              <a class="button small" routerLink="/login">Login</a> 
+              <a class="button small" routerLink="/signup">Sign up</a>
+            </span>
+        </div>
+    </div>
+    <hr>
+    <div class="small-12 medium-8 medium-centered columns">
+        <div *ngIf="af.auth | async">You are logged in.</div>
+        <div *ngIf="!(af.auth | async)">You're not logged in.</div>
+    </div>
+</div>
 <p>
     <router-outlet></router-outlet>
 </p>

@@ -6,7 +6,9 @@ import { AngularFire } from 'angularfire2';
 export class AuthGuard implements CanActivate{
   public allowed: boolean;
 
-  constructor(private af: AngularFire, private router: Router) { }
+  constructor(private af: AngularFire, private router: Router) { 
+    // this.af.auth.subscribe((auth) => console.log(auth));
+  }
 
   canActivate(route: ActivatedRouteSnapshot, state: RouterStateSnapshot): boolean {
     this.af.auth.subscribe((auth) =>  {

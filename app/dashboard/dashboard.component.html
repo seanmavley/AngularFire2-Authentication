@@ -1,1 +1,21 @@
-Only Logged in Can see this
+<div class="row">
+    <div class="small-12 columns">
+        <h4 class="callout">
+          Dashboard which only Logged in Can see this
+        </h4>
+    </div>
+    <div class="small-12 columns">
+        <div class="menu-centered">
+            <ul class="menu">
+                <li>Dashboard routes</li>
+                <li><a routerLink="/dashboard/profile">Profile</a></li>
+                <li><a routerLink="/dashboard/account">Account</a></li>
+                <li><a routerLink="/dashboard/settings">Settings</a></li>
+            </ul>
+        </div>
+        <hr>
+    </div>
+    <div class="small-12 columns">
+        <router-outlet></router-outlet>
+    </div>
+</div>
