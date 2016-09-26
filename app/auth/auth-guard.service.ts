@@ -1,3 +1,6 @@
+import 'rxjs/add/operator/map';
+import 'rxjs/add/operator/first';
+import { Observable } from 'rxjs/Observable';
 import { Injectable } from '@angular/core';
 import { CanActivate, Router, ActivatedRouteSnapshot, RouterStateSnapshot } from '@angular/router';
 import { AngularFire } from 'angularfire2';
@@ -10,15 +13,14 @@ export class AuthGuard implements CanActivate{
     // this.af.auth.subscribe((auth) => console.log(auth));
   }
 
-  canActivate(route: ActivatedRouteSnapshot, state: RouterStateSnapshot): boolean {
-    this.af.auth.subscribe((auth) =>  {
+  canActivate(route: ActivatedRouteSnapshot, state: RouterStateSnapshot): Observable<boolean> {
+    return this.af.auth.map((auth) =>  {
       if(auth == null) {
         this.router.navigate(['/login']);
-        this.allowed = false;
+        return false;
       } else {
-        this.allowed = true;
+        return true;
       }
-    })
-    return this.allowed;
+    }).first()
   }
 }

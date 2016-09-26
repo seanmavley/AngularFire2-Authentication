@@ -9,7 +9,7 @@ The related article about this project is available at https://blog.khophi.co/an
  - Getting comfortable with Angular Components
  - Handling form input with the FormModule
  - Using the NgModule to encapsulate features or functionality in our app
- - Using the Angular 2 Final Router for Routing
+ - Using the Angular 2 Final Router for Routing and Child Routes
  - Adding Authentication thanks to Firebase 3 via AngularFire2
  - Protecting certain routes with our Angular AuthGuard service
  - We'll throw in a little catch-all component for our 404 needs.
