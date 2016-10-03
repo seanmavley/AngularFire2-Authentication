@@ -41,13 +41,13 @@
         main: './index.js',
         defaultExtension: 'js'
       },
-      angularfire2: {
-        main: 'bundles/angularFire2.umd.js',
-        defautExtension: 'js'
-      },
       firebase: {
         main: './firebase.js',
         defaultExtension: 'js'
+      },
+      angularfire2: {
+        main: 'bundles/angularFire2.umd.js',
+        defautExtension: 'js'
       },
       'angular2-toaster': {
         defaultExtension: 'js'

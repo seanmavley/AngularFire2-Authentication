@@ -1,13 +1,14 @@
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
 
-import { AngularFire } from 'angularfire2';
+import { AngularFire, FirebaseAuth, AngularFireAuth } from 'angularfire2';
 
 @Component({
   templateUrl: 'app/auth/signup.component.html'
 })
 
 export class SignupComponent {
+  public error: any;
 
   constructor(private af: AngularFire, private router: Router) {  }
 
@@ -26,6 +27,8 @@ export class SignupComponent {
         console.log(err);
         this.router.navigate(['/login']);
       })
+    } else {
+      this.error = 'Your form is invalid';
     }
   }
 }
@@ -35,7 +38,10 @@ export class SignupComponent {
 })
 
 export class LoginComponent {
+  public error: any;
+
   constructor(private af: AngularFire, private router: Router) { }
+
   onSubmit(formData) {
     if(formData.valid) {
       console.log(formData.value);
@@ -51,6 +57,22 @@ export class LoginComponent {
         console.log(err);
         this.router.navigate(['/dashboard']);
       })
+    } else {
+      this.error = 'Your form is invalid';
     }
+  }
+}
+
+@Component({
+  templateUrl: 'app/auth/resetpassword.component.html'
+})
+
+export class ResetpassComponent {
+  constructor(private af: AngularFire) { }
+
+  onSubmit(formData) {
+     if(formData.valid) {
+       console.log('Submission worked');
+     }
   }
 }

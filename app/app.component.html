@@ -13,11 +13,13 @@
         </div>
     </div>
     <hr>
-    <div class="small-12 medium-8 medium-centered columns">
-        <div *ngIf="af.auth | async">You are logged in.</div>
-        <div *ngIf="!(af.auth | async)">You're not logged in.</div>
-    </div>
 </div>
-<p>
-    <router-outlet></router-outlet>
-</p>
+<router-outlet></router-outlet>
+<hr>
+<div class="menu-centered">
+    <ul class="menu">
+        <li *ngIf="af.auth | async">LOGGED IN</li>
+        <li *ngIf="!(af.auth | async)">NOT LOGGED IN</li>
+        <li><a href="https://blog.khophi.co/angularfire2-authentication/" target="new">Read: AngularFire2 Authentication Article</a></li>
+    </ul>
+</div>
