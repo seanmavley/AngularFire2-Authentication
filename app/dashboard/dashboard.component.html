@@ -1,13 +1,13 @@
 <div class="row">
-    <div class="small-12 columns">
-        <h4 class="callout">
+    <div class="small-12 medium-6 medium-centered columns">
+        <h5 class="callout text-center">
           Dashboard which only Logged in Can see this
-        </h4>
+        </h5>
     </div>
     <div class="small-12 columns">
         <div class="menu-centered">
             <ul class="menu">
-                <li>Dashboard routes</li>
+                <li>Dashboard</li>
                 <li><a routerLink="/dashboard/profile">Profile</a></li>
                 <li><a routerLink="/dashboard/account">Account</a></li>
                 <li><a routerLink="/dashboard/settings">Settings</a></li>
@@ -15,7 +15,7 @@
         </div>
         <hr>
     </div>
-    <div class="small-12 columns">
-        <router-outlet></router-outlet>
-    </div>
+</div>
+<div class="row">
+    <router-outlet></router-outlet>
 </div>

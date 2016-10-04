@@ -1,5 +1,6 @@
 <html>
-  <head>
+
+<head>
     <base href="/">
     <title>AngularFire 2 Authentication</title>
     <meta charset="UTF-8">
@@ -7,9 +8,9 @@
     <!-- Load CSS Stylesheets -->
     <link rel="stylesheet" href="node_modules/foundation-sites/dist/foundation.min.css">
     <link rel="stylesheet" href="./public/foundation-icons/foundation-icons.css" />
-
+    <link rel="stylesheet" type="text/css" href="./public/spinner.css">
     <!-- 1. Load libraries -->
-     <!-- Polyfill(s) for older browsers -->
+    <!-- Polyfill(s) for older browsers -->
     <script src="node_modules/core-js/client/shim.min.js"></script>
     <script src="node_modules/zone.js/dist/zone.js"></script>
     <script src="node_modules/reflect-metadata/Reflect.js"></script>
@@ -17,17 +18,27 @@
     <!-- 2. Configure SystemJS -->
     <script src="systemjs.config.js"></script>
     <script>
-      System.import('app').catch(function(err){ console.error(err); });
+    System.import('app').catch(function(err) {
+        console.error(err);
+    });
     </script>
     <!-- 3. Third-party libraries -->
-  </head>
-  <!-- 4. Display the application -->
-  <body>
-    <root-app>Loading...</root-app>
-  </body>
-  <script src="node_modules/jquery/dist/jquery.min.js"></script>
-  <script src="node_modules/foundation-sites/dist/foundation.min.js"></script>
-  <script type="text/javascript">
-    $(document).foundation();
-  </script>
+</head>
+<!-- 4. Display the application -->
+
+<body>
+    <root-app>
+        <div class="row" style="margin-top:50px;">
+            <div class="small-8 small-centered medium-3 medium-centered columns">
+                <div id="loading"></div>
+            </div>
+        </div>
+    </root-app>
+</body>
+<script src="node_modules/jquery/dist/jquery.min.js"></script>
+<script src="node_modules/foundation-sites/dist/foundation.min.js"></script>
+<script type="text/javascript">
+$(document).foundation();
+</script>
+
 </html>

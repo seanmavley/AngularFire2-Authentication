@@ -1,7 +1,40 @@
-<h3>Account Page</h3>
-Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+<div class="small-12 medium-8 medium-centered large-6 large-centered columns">
+    <h3>Account Page</h3> Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+    <hr>
+    <h2>Change Name</h2>
+    <form #formData='ngForm' (ngSubmit)="changeName(formData)">
+        <div class="row">
+            <div class="small-12 columns">
+                <label> Old Password
+                    <input type="password" name="passwordold" (ngModel)="old" requred>
+                </label>
+            </div>
+            <div class="small-12 columns">
+                <button type="submit" class="button" [disabled]="!formData.valid">Submit</button>
+                <br/>
+                <a routerLink="/">Cancel</a>
+            </div>
+        </div>
+    </form>
+    <hr>
+    <h2>Change Password</h2>
+    <form #formData='ngForm' (ngSubmit)="onSubmit(formData)">
+        <div class="row">
+            <div class="small-12 columns">
+                <label> Old Password
+                    <input type="password" name="passwordold" (ngModel)="old" requred>
+                </label>
+            </div>
+            <div class="small-12 columns">
+                <label> New Password
+                    <input type="password" name="passwordnew" (ngModel)="new" requred>
+                </label>
+            </div>
+            <div class="small-12 columns">
+                <button type="submit" class="button" [disabled]="!formData.valid">Submit</button>
+                <br/>
+                <a routerLink="/">Cancel</a>
+            </div>
+        </div>
+    </form>
+</div>
