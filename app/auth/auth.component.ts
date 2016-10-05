@@ -1,7 +1,7 @@
-import { Component } from '@angular/core';
+import { Component, Inject } from '@angular/core';
 import { Router } from '@angular/router';
 
-import { AngularFire, FirebaseAuth, AngularFireAuth } from 'angularfire2';
+import { AngularFire, FirebaseApp } from 'angularfire2';
 
 @Component({
   templateUrl: 'app/auth/signup.component.html'
@@ -68,11 +68,25 @@ export class LoginComponent {
 })
 
 export class ResetpassComponent {
-  constructor(private af: AngularFire) { }
+  public auth: any;
+  public message: any;
+  constructor(private af: AngularFire, @Inject(FirebaseApp) firebaseApp: any) {
+    this.auth = firebaseApp.auth()
+    console.log(this.auth);
+  }
 
   onSubmit(formData) {
      if(formData.valid) {
        console.log('Submission worked');
+       this.auth.sendPasswordResetEmail(formData.value.email)
+         .then( (response) => {
+           console.log('Sent successfully');
+           this.message = 'Check your email for reset link';
+         })
+         .catch( (error) => {
+           this.message = error;
+           console.log(error);
+         })
      }
   }
 }
